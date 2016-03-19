@@ -94,7 +94,7 @@ if(mysqli_query($conn, $qInsertKost)){
 						if($_SERVER['REQUEST_METHOD']=='POST'){
 							$image = $_POST['image'];
 							
-							$path = "img/".$kost_name.".jpg";
+							$path = "img/".$kost_id.".jpg";
 							$img_name = "http://".$_SERVER['SERVER_NAME']."/".$path."";
 
 							$sqlImage = "UPDATE kost SET 
