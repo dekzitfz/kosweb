@@ -9,7 +9,7 @@ $kost_address = $_POST['kost_address'];
 $kost_phone = $_POST['kost_phone'];
 $kost_latitude = $_POST['kost_latitude'];
 $kost_longitude = $_POST['kost_longitude'];
-//$kost_created_by = $_POST['kost_created_by'];
+$surveyor_id = $_POST['surveyor_id'];
 $facility_kost_id = "";
 $rent_type_kost_id = "";
 $rent_type_name = $_POST['rent_type_name'];
@@ -26,7 +26,7 @@ $qInsertKost = "INSERT INTO kost (kost_id,
 								  kost_phone,
 								  kost_latitude,
 								  kost_longitude,
-								  kost_created_by) 
+								  surveyor_id) 
 					   VALUES (null,
 					   		  '$kost_name',
 					   		  '$kost_owner',
@@ -35,7 +35,7 @@ $qInsertKost = "INSERT INTO kost (kost_id,
 					   		  '$kost_phone',
 					   		  '$kost_latitude',
 					   		  '$kost_longitude',
-					   		  'dekz')";
+					   		  '$surveyor_id')";
 if(mysqli_query($conn, $qInsertKost)){
 	//insert koss success
 	//get kost_id in the last row

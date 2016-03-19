@@ -1,13 +1,14 @@
 <?php
 include "config.php";
 
+$surveyor_id = $_GET['surveyor_id'];
 $status = "";
 $json = array();
 $facility;
 $rent_type;
 $result;
 
-$query = mysqli_query($conn, "SELECT * FROM kost");
+$query = mysqli_query($conn, "SELECT * FROM kost WHERE surveyor_id='$surveyor_id'");
 if (mysqli_num_rows($query) > 0) {
 	//ada data
 	$status = "success";
@@ -20,5 +21,6 @@ if (mysqli_num_rows($query) > 0) {
 	$status = "empty";
 	$result = array('code' => 200,'status' => $status,'result' => $json);
 }
+header('Content-Type: application/json');
 echo json_encode($result);
 ?>
